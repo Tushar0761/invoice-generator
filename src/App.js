@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Head from "./components/Head";
+import ProductDetails from "./components/ProductDetails";
+import ProductSection from "./components/ProductSection";
+import Total from "./components/Total";
+import { TotalProvider } from "./context/Total";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <TotalProvider>
+            <div className="bg-slate-600 flex justify-center items-center h-screen px-7">
+                <div className="bg-white m-3  p-3  w-screen">
+                    <Head />
+                    <ProductSection />
+                    <Total />
+                </div>
+            </div>
+        </TotalProvider>
+    );
 }
 
 export default App;
